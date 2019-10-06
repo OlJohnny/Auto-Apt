@@ -5,6 +5,8 @@ set -o pipefail
 set -o nounset
 # set -o xtrace         # uncomment the previous statement for debugging
 
+### set absolute path for cron compatibility ###
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 ### check for root privilges ###
 if [[ "${EUID}" -ne 0 ]]
@@ -49,4 +51,3 @@ else
 	apt autoremove -y
 	echo -e "\e[96m<$(date +"%T")> Exiting...\e[0m"
 fi
-
