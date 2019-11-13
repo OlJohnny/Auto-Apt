@@ -32,24 +32,24 @@ if [[ "${interactive}" == 1 ]]
 then
 	echo -e "\e[96mNormal Argument Provided, Semi-Automated removing, update, upgrade, install, autoremove...\e[0m"
 	echo -e "\e[96m<$(date +"%T")> Removing Standard Desktop Applications...\e[0m"
-	apt purge libreoffice* thunderbird*
+	apt-get purge libreoffice* thunderbird*
 	echo -e "\e[96m<$(date +"%T")> Updating Package List...\e[0m"
-	apt update > /dev/null
-	apt list --upgradeable
+	apt-get update > /dev/null
+	apt-get list --upgradeable
 	echo -e "\e[96m<$(date +"%T")> Upgrading Packages...\e[0m"
-	apt upgrade
+	apt-get upgrade
 	echo -e "\e[96m<$(date +"%T")> Installing Recommended Packages...\e[0m"
-	apt install nano htop software-properties-common linux-headers-generic net-tools iptables git php curl whiptail
+	apt-get install nano htop software-properties-common linux-headers-generic net-tools iptables git php curl whiptail
 	echo -e "\e[96m<$(date +"%T")> Removing Old Packages...\e[0m"
-	apt autoremove
+	apt-get autoremove
 	echo -e "\e[96m<$(date +"%T")> Exiting...\e[0m"
 else
 	echo -e "\e[96mNo Normal Argument Provided, Executing Automated update, upgrade, autoremove...\e[0m"
 	echo -e "\e[96m<$(date +"%T")> Updating Package List...\e[0m"
-	apt update
+	apt-get update
 	echo -e "\e[96m<$(date +"%T")> Upgrading Packages...\e[0m"
-	apt upgrade -y
+	apt-get upgrade -y
 	echo -e "\e[96m<$(date +"%T")> Removing Old Packages...\e[0m"
-	apt autoremove -y
+	apt-get autoremove -y
 	echo -e "\e[96m<$(date +"%T")> Exiting...\e[0m"
 fi
