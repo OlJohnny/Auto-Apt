@@ -35,7 +35,7 @@ then
 	apt-get purge libreoffice* thunderbird*
 	echo -e "\e[96m<$(date +"%T")> Updating Package List...\e[0m"
 	apt-get update > /dev/null
-	apt-get list --upgradeable
+	apt list --upgradeable
 	echo -e "\e[96m<$(date +"%T")> Upgrading Packages...\e[0m"
 	apt-get upgrade
 	echo -e "\e[96m<$(date +"%T")> Installing Recommended Packages...\e[0m"
